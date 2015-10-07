@@ -23,8 +23,8 @@ class Batchgcd
     write_file("#{$FastGCD_PATH}input.moduli")
     `#{$FastGCD_PATH}fastgcd #{$FastGCD_PATH}input.moduli`
     puts "\n\nDone...."
-    puts "The vulnerabe modulus is in #{$FastGCD_PATH}vulnerable_moduli"
-    puts "The gcd of  modulus is in #{$FastGCD_PATH}gcds"
+    puts "The vulnerabe modulus is in #{Dir.pwd}vulnerable_moduli"
+    puts "The gcd of  modulus is in #{Dir.pwdk}gcds"
   end
 
 private
