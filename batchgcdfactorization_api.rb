@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'openssl'
-$FastGCD_PATH = "/home/zywu/crypto/batchgcdfactorization/BatchGCDFactorization/fastgcd/"
+$FastGCD_PATH = "#{Dir.pwd}/fastgcd/"
 
 class Batchgcd
   def initialize(n_arr=nil)
