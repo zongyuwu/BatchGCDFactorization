@@ -15,7 +15,7 @@ class Batchgcd
   end
 
   def update_from_file(file_name)
-    rsa = OpenSSL::PKey::RSA.new file_name
+    rsa = OpenSSL::PKey::RSA.new File.read file_name
     @N_arr << rsa.params["n"].to_i
   end
 
