@@ -10,7 +10,7 @@ class Batchgcd
   end
 
   def update(n_v)
-    puts "update"
+    #puts "update"
     @N_arr << n_v.to_i
   end
 
@@ -23,13 +23,11 @@ class Batchgcd
     write_file("#{$FastGCD_PATH}input.moduli")
     `#{$FastGCD_PATH}fastgcd #{$FastGCD_PATH}input.moduli`
     puts "\n\nDone...."
-    puts "The vulnerabe modulus is in #{Dir.pwd}vulnerable_moduli"
-    puts "The gcd of  modulus is in #{Dir.pwdk}gcds"
   end
 
 private
   def write_file(filepath)
-    p @N_arr
+    #p @N_arr
     File.delete(filepath) if File.exist?(filepath)
     File.open(filepath, "w") do |f| 
       @N_arr.each do |e|
