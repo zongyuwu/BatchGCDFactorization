@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'openssl'
-$FastGCD_PATH = "#{Dir.pwd}/fastgcd/"
+#$FastGCD_PATH = "#{Dir.pwd}/fastgcd/"
+$FastGCD_PATH = "#{File.expand_path("../fastgcd/", __FILE__)}"
 
 class Batchgcd
   def initialize(n_arr=nil)
@@ -20,8 +21,8 @@ class Batchgcd
   end
 
   def exploit
-    write_file("#{$FastGCD_PATH}input.moduli")
-    `#{$FastGCD_PATH}fastgcd #{$FastGCD_PATH}input.moduli`
+    write_file("#{$FastGCD_PATH}/input.moduli")
+    `#{$FastGCD_PATH}/fastgcd #{$FastGCD_PATH}/input.moduli`
     puts "\n\nDone...."
   end
 
@@ -48,6 +49,6 @@ bgcd = Batchgcd.new([p1*q1, p1*q2])
 bgcd.update(p1*q3)
 bgcd.update(p1*q4)
 bgcd.update(q1*q4)
-bgcd.update_from_file("./test.pem")
+#bgcd.update_from_file("./test.pem")
 puts bgcd.exploit
 =end
